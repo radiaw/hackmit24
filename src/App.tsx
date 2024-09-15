@@ -61,7 +61,6 @@ function Chat() {
 }
 
 
-
 function PatientAnalytics() {
   useEffect(() => {
     // Create and append the Visme script for both embeds
@@ -77,10 +76,10 @@ function PatientAnalytics() {
   }, []);
 
   return (
-    <main className="h-screen w-screen bg-slate-200">
-      <div>
-        <h1>Patient Disease Classification</h1>
-        <p>This is the page about disease classification.</p>
+      <main className="h-screen w-screen bg-slate-200" style={{ backgroundColor: "#e1f1fd"}}>
+        <div>
+        <h1 style={{ color: "#4663ac" }}>Patient Disease Classification</h1>
+        <p style={{ color: "#4663ac" }}>This is the page about disease classification.</p>
 
         {/* Flex container for both images side by side */}
         <div className="row" style={{ display: "flex", justifyContent: "center", gap: "20px" }}>
