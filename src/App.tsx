@@ -78,8 +78,8 @@ function PatientAnalytics() {
   return (
       <main className="h-screen w-screen bg-slate-200" style={{ backgroundColor: "#e1f1fd"}}>
         <div>
-        <h1 style={{ color: "#4663ac" , padding: "40 px !important"}}>Patient Disease Classification</h1>
-        <p style={{ color: "#4663ac", padding: "40 px !important" }}>NeuroTrack created a computational algortithm to perform a content-agnostic analysis of the timing of pressing and releasing keystrokes during a controlled series of trials. Combining this information with the patient's medical record, we were able to use machine learning to identify biomarkers of functional impairments in motor development and cognition. A decline in motor function and congition can be an indicator of neurodegenrative disease progression.</p>
+        <h1 style={{ color: "#4663ac" , padding: "20px"}}>Patient Disease Classification</h1>
+        <p style={{ color: "#4663ac", padding: "20px" , fontSize: "14pt"}}>NeuroTrack created a computational algortithm to perform a content-agnostic analysis of the timing of pressing and releasing keystrokes during a controlled series of trials. Combining this information with the patient's medical record, we were able to use machine learning to identify biomarkers of functional impairments in motor development and cognition. A decline in motor function and congition can be an indicator of neurodegenrative disease progression.</p>
 
         {/* Flex container for both images side by side */}
         <div className="row" style={{ display: "flex", justifyContent: "center", gap: "20px" }}>
