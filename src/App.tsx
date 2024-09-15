@@ -1,6 +1,6 @@
 import { useQuery, useMutation } from "convex/react";
 import { api } from "../convex/_generated/api";
-import { React, useEffect, useState } from "react";
+import {useEffect, useState } from "react";
 import { faker } from "@faker-js/faker";
 import { BrowserRouter as Router, Route, Routes, useNavigate } from "react-router-dom";
 import { mutation } from "../convex/_generated/server";
@@ -347,14 +347,16 @@ function CreateAccount() {
   )
 }
 
-function Patient({ lname, fname }: { lname: string , fname: string }) {
+
+
+function Patient({ patient }: { patient: object }) {
   const navigate = useNavigate()
   return (
     <div className="bg-secondary-light shadow-md rounded-md flex flex-row my-4">
       <div className="text-primary-dark flex flex-row justify-between w-full py-4 px-6 text-lg">
-        <p>{lname}, {fname}</p>
+        <p>{patient.patientName.last}, {patient.patientName.first}</p>
         <div>
-          <button className="px-2 py-1 mx-2 bg-secondary text-primary">View Data</button>
+          <button className="px-2 py-1 mx-2 bg-secondary text-primary" onClick={()=>{alert(patient)}}>View Data</button>
           <button className="px-2 py-1 mx-2 text-secondary bg-primary" onClick={()=>{navigate("/test")}}>Run Test</button>
         </div>
       </div>
@@ -374,9 +376,9 @@ function Dashboard() {
           <button className="bg-primary text-secondary-light px-2 py-1 my-2">+ Add Patient</button>
         </a>
         <div className="grid grid-cols-1">
-          {patients?.map((patient: { patientName: {first: string; last: string} }, index: number) => (
+          {patients?.map((patient, index: number) => (
             <div key={index}>
-              <Patient lname={patient.patientName.last} fname={patient.patientName.first} />
+              <Patient patient={patient} />
             </div>
           ))}
         </div>
